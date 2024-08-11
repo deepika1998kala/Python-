@@ -1,0 +1,18 @@
+from datetime import datetime
+
+now = datetime.now()
+
+curr_hour = now.hour
+curr_minute = now.minute
+curr_second = now.second
+
+current_time = now.strftime("%H:%M:%S")
+if(curr_hour>=12 and curr_hour<=16 and curr_minute>0 and curr_second>0):
+    print("Good After Noon Sir")
+
+elif(curr_hour<12 and curr_hour>=4 and curr_minute>0 and curr_second>0):
+    print("Good Morning Sir")
+else:
+    print("Good Evening Sir")
+
+print("Current Time =", current_time)
