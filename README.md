@@ -823,35 +823,76 @@ with open("file.txt", "w") as f:
 ---
 
 ## 🧠 Advanced Topics
+Sure! Here's a concise yet informative explanation of **List Comprehensions**, **Decorators**, and **Generators** in Python, with definitions, use cases, and examples:
 
-### ➤ Lambda Functions
+---
+
+## ✅ **List Comprehensions**
+
+### 📘 **Definition**:
+A *List Comprehension* is a concise way to create lists in Python using a single line of code.
+
+### 🔧 **Syntax**:
 ```python
-square = lambda x: x*x
-print(square(5))
+[expression for item in iterable if condition]
 ```
 
-### ➤ List Comprehensions
+### 🧪 **Example**:
 ```python
-even = [x for x in range(10) if x%2==0]
+# Create a list of squares for even numbers from 0 to 9
+squares = [x**2 for x in range(10) if x % 2 == 0]
+print(squares)  # Output: [0, 4, 16, 36, 64]
 ```
 
-### ➤ Decorators
+### 🎯 **Use Cases**:
+- Filtering lists
+- Transforming data
+- Quick operations on sequences
+
+---
+
+## ✅ **Decorators**
+
+### 📘 **Definition**:
+A *Decorator* is a function that takes another function as input and extends its behavior without modifying it directly.
+
+### 🔧 **Syntax**:
 ```python
 def decorator(func):
     def wrapper():
-        print("Before")
+        print("Before function call")
         func()
-        print("After")
+        print("After function call")
     return wrapper
 
 @decorator
-def say_hi():
-    print("Hi!")
+def say_hello():
+    print("Hello!")
 
-say_hi()
+say_hello()
 ```
 
-### ➤ Generators
+### 🧪 **Output**:
+```
+Before function call
+Hello!
+After function call
+```
+
+### 🎯 **Use Cases**:
+- Logging
+- Authorization
+- Caching
+- Performance monitoring
+
+---
+
+## ✅ **Generators**
+
+### 📘 **Definition**:
+A *Generator* is a special type of iterator that yields one value at a time using the `yield` keyword, which saves memory.
+
+### 🔧 **Syntax**:
 ```python
 def count_up_to(n):
     i = 1
@@ -859,11 +900,71 @@ def count_up_to(n):
         yield i
         i += 1
 
-for num in count_up_to(5):
-    print(num)
+for number in count_up_to(5):
+    print(number)
 ```
 
+### 🧪 **Output**:
+```
+1
+2
+3
+4
+5
+```
+
+### 🎯 **Use Cases**:
+- Large data handling
+- Streaming data
+- Lazy evaluation
+
 ---
+Absolutely! Let’s add **Lambda Functions** to the mix along with the others, explained in a clear and brief way:
+
+---
+
+## ✅ **Lambda Functions**
+
+### 📘 **Definition**:
+A **lambda function** is a small anonymous function defined using the `lambda` keyword. It's typically used when a short function is needed for a short period and is usually passed as an argument to higher-order functions.
+
+### 🔧 **Syntax**:
+```python
+lambda arguments: expression
+```
+
+### 🧪 **Example**:
+```python
+# Lambda to add two numbers
+add = lambda x, y: x + y
+print(add(3, 5))  # Output: 8
+```
+
+### ✅ **With built-in functions**:
+```python
+# Using lambda with sorted()
+points = [(2, 3), (4, 1), (1, 5)]
+points_sorted = sorted(points, key=lambda x: x[1])
+print(points_sorted)  # Output: [(4, 1), (2, 3), (1, 5)]
+```
+
+### 🎯 **Use Cases**:
+- Used with functions like `map()`, `filter()`, `reduce()`, and `sorted()`
+- Quick, inline function creation without defining a full `def` block
+
+---
+
+## ✅ Summary Table
+
+| Concept           | Definition                                                                 | Use Case                                       | Syntax Example                     |
+|-------------------|-----------------------------------------------------------------------------|------------------------------------------------|------------------------------------|
+| List Comprehension | Short syntax to create lists                                               | Filtering, transforming lists                  | `[x for x in range(5) if x%2==0]`  |
+| Decorator         | Enhances behavior of a function without changing it                         | Logging, authorization                         | `@decorator_name`                  |
+| Generator         | Function that yields one value at a time                                    | Memory-efficient iteration                     | `yield` inside a function          |
+| Lambda Function   | Anonymous function used for short, simple operations                        | Inline usage in map, filter, sorted, etc.      | `lambda x: x*x`                    |
+
+---
+
 
 ## 🧪 Virtual Environment & Package Management
 ```bash
