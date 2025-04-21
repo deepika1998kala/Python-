@@ -394,6 +394,145 @@ class Dog(Animal):  # Inherits from Animal class
 dog = Dog()
 dog.sound()  # Dog barks
 ```
+Here are the **types of inheritance** in Object-Oriented Programming (OOP), along with definitions and examples:
+
+---
+
+### 1. **Single Inheritance**
+
+- **Definition**: A subclass inherits from a single superclass.
+
+- **Example**:
+
+  
+```python
+  class Animal:
+      def speak(self):
+          print("Animal speaks")
+
+  class Dog(Animal):
+      def bark(self):
+          print("Dog barks")
+
+  d = Dog()
+  d.speak()  # Output: Animal speaks
+  d.bark()   # Output: Dog barks
+  ```
+
+
+---
+
+### 2. **Multiple Inheritance**
+
+- **Definition**: A subclass inherits from more than one superclass.
+
+- **Example**:
+
+  
+```python
+  class Father:
+      def skills(self):
+          print("Gardening")
+
+  class Mother:
+      def skills(self):
+          print("Cooking")
+
+  class Child(Father, Mother):
+      pass
+
+  c = Child()
+  c.skills()  # Output: Gardening (Method Resolution Order applies)
+  ```
+
+
+---
+
+### 3. **Multilevel Inheritance**
+
+- **Definition**: A subclass inherits from a superclass, and another subclass inherits from that subclass, forming a chain.
+
+- **Example**:
+
+  
+```python
+  class Grandparent:
+      def family_name(self):
+          print("Smith")
+
+  class Parent(Grandparent):
+      pass
+
+  class Child(Parent):
+      pass
+
+  c = Child()
+  c.family_name()  # Output: Smith
+  ```
+
+
+---
+
+### 4. **Hierarchical Inheritance**
+
+- **Definition**: Multiple subclasses inherit from a single superclass.
+
+- **Example**:
+
+  
+```python
+  class Animal:
+      def sound(self):
+          print("Animal sound")
+
+  class Dog(Animal):
+      def sound(self):
+          print("Dog barks")
+
+  class Cat(Animal):
+      def sound(self):
+          print("Cat meows")
+
+  d = Dog()
+  c = Cat()
+  d.sound()  # Output: Dog barks
+  c.sound()  # Output: Cat meows
+  ```
+
+
+---
+
+### 5. **Hybrid Inheritance**
+
+- **Definition**: A combination of two or more types of inheritance.
+
+- **Example**:
+
+  
+```python
+  class A:
+      def method(self):
+          print("A")
+
+  class B(A):
+      def method(self):
+          print("B")
+
+  class C(A):
+      def method(self):
+          print("C")
+
+  class D(B, C):
+      pass
+
+  d = D()
+  d.method()  # Output: B (Method Resolution Order applies)
+  ```
+
+
+---
+
+These inheritance types help in organizing code, promoting reusability, and establishing relationships between classes in object-oriented programming. 
 
 ---
 
