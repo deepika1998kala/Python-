@@ -143,28 +143,124 @@ greet()
 
 ---
 
-## 🗃️ Data Structures
+# 🧱 Python Data Structures: Complete Notes
 
-### ➤ List
+Python provides several built-in data structures that are essential for organizing and managing data efficiently. These include lists, tuples, sets, and dictionaries.
+
+---
+
+## 📦 1. List
+
+A **list** is an ordered, mutable (changeable) collection of items. It allows duplicate elements.
+
+### ➤ Syntax
 ```python
-fruits = ["apple", "banana"]
-fruits.append("cherry")
+my_list = [1, 2, 3, 4, 5]
 ```
 
-### ➤ Tuple
+### ➤ Common Methods
+- `append(x)` – Adds an item to the end
+- `insert(i, x)` – Inserts at a specific index
+- `remove(x)` – Removes first occurrence of x
+- `pop(i)` – Removes and returns element at index i
+- `sort()` – Sorts the list
+- `reverse()` – Reverses the list
+
+### ➤ Example
 ```python
-point = (10, 20)
+fruits = ["apple", "banana", "cherry"]
+fruits.append("mango")
+print(fruits)  # ['apple', 'banana', 'cherry', 'mango']
 ```
 
-### ➤ Set
+---
+
+## 📦 2. Tuple
+
+A **tuple** is an ordered, immutable collection. Tuples are faster and use less memory.
+
+### ➤ Syntax
 ```python
-unique_items = {1, 2, 3}
+my_tuple = (1, 2, 3)
 ```
 
-### ➤ Dictionary
+### ➤ Key Features
+- Cannot modify after creation
+- Can be used as dictionary keys (if they contain only immutable elements)
+
+### ➤ Example
 ```python
-student = {"name": "Ali", "age": 21}
+coordinates = (10.0, 20.0)
+print(coordinates[0])  # 10.0
 ```
+
+---
+
+## 📦 3. Set
+
+A **set** is an unordered collection of unique elements.
+
+### ➤ Syntax
+```python
+my_set = {1, 2, 3}
+```
+
+### ➤ Common Operations
+- `add(x)` – Adds an element
+- `remove(x)` – Removes an element
+- `union(set)` – Returns the union
+- `intersection(set)` – Returns common elements
+
+### ➤ Example
+```python
+s1 = {1, 2, 3}
+s2 = {3, 4, 5}
+print(s1.union(s2))         # {1, 2, 3, 4, 5}
+print(s1.intersection(s2))  # {3}
+```
+
+---
+
+## 📦 4. Dictionary
+
+A **dictionary** is an unordered collection of key-value pairs. Keys must be unique and immutable.
+
+### ➤ Syntax
+```python
+my_dict = {"name": "Ali", "age": 25}
+```
+
+### ➤ Common Methods
+- `get(key)` – Returns the value for key
+- `keys()` – Returns all keys
+- `values()` – Returns all values
+- `items()` – Returns key-value pairs
+- `update()` – Updates dictionary with elements from another
+
+### ➤ Example
+```python
+student = {"name": "Ali", "age": 25}
+print(student["name"])  # Ali
+student["grade"] = "A"
+print(student)  # {'name': 'Ali', 'age': 25, 'grade': 'A'}
+```
+
+---
+
+## 🔁 Choosing the Right Data Structure
+
+| Use Case                        | Data Structure |
+|--------------------------------|----------------|
+| Need ordered & changeable data | List           |
+| Fixed and ordered data         | Tuple          |
+| Unique unordered items         | Set            |
+| Key-value mapping              | Dictionary     |
+
+---
+
+Let me know if you want advanced data structure examples like `defaultdict`, `deque`, or custom classes!
+
+
 
 ---
 
