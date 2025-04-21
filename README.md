@@ -240,7 +240,70 @@ car2 = Car("Honda", "Civic")
 car1.display_info()  # Car Make: Toyota, Model: Corolla
 car2.display_info()  # Car Make: Honda, Model: Civic
 ```
+Great question! Let's break it down with **clear definitions** and explanations directly from your code:
 
+---
+
+### 🔷 **What is a Class?**
+
+> A **class** is a blueprint or template for creating objects. It defines attributes (variables) and behaviors (methods/functions) that the objects created from the class will have.
+
+#### 👉 In Your Code:
+```python
+class Car:
+    def __init__(self, make, model):
+        self.make = make
+        self.model = model
+    
+    def display_info(self):
+        print(f"Car Make: {self.make}, Model: {self.model}")
+```
+
+✅ `class Car:` → This defines a class named `Car`.
+
+- `__init__()` → Special method called **constructor**, used to initialize objects.
+- `self.make` and `self.model` → Instance variables (unique to each object).
+- `display_info()` → A method that prints the car's details.
+
+---
+
+### 🔷 **What is an Object?**
+
+> An **object** is an instance of a class. It is a real, usable thing that is created using the class blueprint.
+
+#### 👉 In Your Code:
+```python
+car1 = Car("Toyota", "Corolla")
+car2 = Car("Honda", "Civic")
+```
+
+✅ `car1` and `car2` are **objects** of the `Car` class.
+
+- `car1` has:
+  - `make = "Toyota"`
+  - `model = "Corolla"`
+
+- `car2` has:
+  - `make = "Honda"`
+  - `model = "Civic"`
+
+These objects use the `display_info()` method to print their data:
+
+```python
+car1.display_info()  # Output: Car Make: Toyota, Model: Corolla
+car2.display_info()  # Output: Car Make: Honda, Model: Civic
+```
+
+---
+
+### ✅ **In Simple Terms**:
+
+| Concept | Explanation |
+|--------|-------------|
+| **Class** | A design/plan — like the idea of a "Car" in general. |
+| **Object** | A specific item made from the plan — like your actual Toyota or Honda car. |
+
+Would you like me to show a diagram or analogy for better clarity too?
 ---
 
 ## 📌 **2. Constructors (`__init__`)**
